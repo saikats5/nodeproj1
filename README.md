@@ -20,3 +20,19 @@ single thread will process request and once the response is back from DB, it wil
 ideal for I/O intensive apps and should not be used for CPU intensive application as it is single threaded, process one request at a time, only for data intensive and real time 
 
 global is there in place of document and console.log can be accessed by global.console.log() but the variable and functions cannot be accessed using global they are undefined as they are scoped only to the file as per node modules
+
+every file in node is considered as module
+
+modules are not part of global// console.log(module)
+
+jshint app.js
+
+(function(exports, require, module, __filename, __dirname){}) // module wrapper function
+there are built-in modules in node which we can found out in list of node docs
+
+require('path') // node assumes it to be built-in module, otherwise it will look for relative path file
+var pathObj = path.parse(__filename);
+
+const os = require("os");
+os.totalmem();
+os.freemem();
