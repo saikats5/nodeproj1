@@ -36,3 +36,9 @@ var pathObj = path.parse(__filename);
 const os = require("os");
 os.totalmem();
 os.freemem();
+
+const fs = require('fs');
+const files = fs.readdirSync('./');
+const files = fs.readdir('./', function(err, files){
+    
+});
